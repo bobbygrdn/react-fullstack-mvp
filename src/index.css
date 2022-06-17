@@ -2,4 +2,22 @@ body {
   margin: 0;
 }
 
+.header {
+  margin: 20px;
+  display: inline-flex;
+  background: gray;
+  padding: 10px;
+  border-radius: 10px;
+}
 
+
+.title {
+  font-size: 80px;
+  margin: auto;
+  text-align: center;
+  pointer-events: none;
+}
+
+.icon {
+  width: 15%;
+}
