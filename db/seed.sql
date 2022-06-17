@@ -1,0 +1,1 @@
+INSERT INTO users (username, height, weight, body_fat, bmi) VALUES ("bobbygrdn", "5'11'", 185, 18, 22);
