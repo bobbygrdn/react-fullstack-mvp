@@ -21,7 +21,7 @@ app.get('/api/users', async (req,res) => {
     }
 });
 
-app.get('api/workout_plans', async (req,res) => {
+app.get('/api/workout_plans', async (req,res) => {
     try {
         const data = await pool.query('SELECT * FROM workout_plans;')
         res.send(data.rows);
@@ -30,9 +30,9 @@ app.get('api/workout_plans', async (req,res) => {
     }
 })
 
-app.get('api/workouts', async (req,res) => {
+app.get('/api/workout', async (req,res) => {
     try {
-        const data = await pool.query('SELECT * FROM workout')
+        const data = await pool.query('SELECT * FROM workout;')
         res.send(data.rows)
     } catch (err) {
         console.error(err.message)
