@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import GordonMedia from './img/Gordon Media.png';
+import Header from './Header'
 
-function App() {
+const App = () => {
   const [users, setUsers] = useState(null);
   const [plans, setPlan] = useState(null);
   const [workout, setWorkout] = useState(null);
@@ -27,10 +27,7 @@ function App() {
   return (
       <>
       <Header />
-        <div className="header">
-          <h1 className="title">Gordon Gym Trainer!</h1>
-          <img src={GordonMedia} alt="none" className='icon' />
-        </div>
+        
       </>
   );
 }
