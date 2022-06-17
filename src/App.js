@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Header from './component/Header'
 import UserProfile from './component/UserProfile';
+import Plan from './component/Plan';
+import Workouts from './component/Workout';
 
 const App = () => {
   const [users, setUsers] = useState([]);
   const [plans, setPlan] = useState([]);
-  const [workout, setWorkout] = useState([]);
+  const [workouts, setWorkout] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:4000/api/users')
@@ -28,10 +30,12 @@ const App = () => {
   return (
       <>
       <Header />
-      <UserProfile users={users} />
-        
+      {/* <UserProfile users={users} />
+      <Plan plans={plans} /> 
+      <Workouts workouts={workouts} /> */}
       </>
-  );
+    )
+  
 }
 
 export default App;
