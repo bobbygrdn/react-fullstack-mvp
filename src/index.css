@@ -24,10 +24,25 @@ body {
 }
 
 .profile {
-  margin: auto;
+  margin: 20px;
+  align-self: center;
   background: gray;
   border-radius: 10px;
   padding: 1%;
   width: max-content;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.workoutPlan {
+  margin: auto;
+  background: gray;
+}
+
+.plan {
+  margin: auto;
+  background: gray;
+  width: 60%;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  padding: 10px
 }
