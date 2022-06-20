@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 10px;
 }
 
 .header {
@@ -24,7 +25,7 @@ body {
 }
 
 .profile {
-  margin: 20px;
+  margin: 5px auto;
   align-self: center;
   background: gray;
   border-radius: 10px;
@@ -39,10 +40,30 @@ body {
 }
 
 .plan {
-  margin: auto;
+  margin: 20px auto;
   background: gray;
   width: 60%;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 10px;
-  padding: 10px
+  padding: 10px;
+}
+
+.singleWorkout {
+  background-color: whitesmoke;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.workouts {
+  margin: auto;
+  background-color: gray;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 10px;
 }
