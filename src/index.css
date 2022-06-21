@@ -60,6 +60,13 @@ body {
   width: fit-content;
 }
 
+.singleWorkout {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
 .workouts {
   margin: auto;
   background-color: gray;
