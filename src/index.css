@@ -55,9 +55,9 @@ body {
   font-size: 15px;
   margin: 5px;
   border-radius: 5px;
-  text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+  width: fit-content;
 }
 
 .workouts {
