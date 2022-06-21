@@ -5,9 +5,10 @@ import Plan from './component/Plan';
 import Workouts from './component/Workout';
 
 const App = () => {
-  const [users, setUsers] = useState([]);
-  const [plans, setPlan] = useState([]);
-  const [workouts, setWorkout] = useState([]);
+  const [users, setUsers] = useState(null);
+  const [plans, setPlan] = useState(null);
+  const [workouts, setWorkout] = useState(null);
+
 
   useEffect(() => {
     fetch('http://localhost:4000/api/users')
@@ -27,15 +28,18 @@ const App = () => {
     .then(data => setWorkout({data}))
   })
 
-  return (
+  if(users !== null && plans !== null && workouts !== null) {
+    return (
+    
       <>
       <Header />
-      {/* <UserProfile users={users} />
-      <Plan plans={plans} /> 
-      <Workouts workouts={workouts} /> */}
+      <UserProfile users={users}  />
+      <Plan plans={plans}  /> 
+      <Workouts workouts={workouts} />
       </>
-    )
   
+    )
+  }
 }
 
 export default App;
