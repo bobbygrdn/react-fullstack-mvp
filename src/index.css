@@ -96,3 +96,20 @@ body {
   padding: 5px;
   cursor: pointer;
 }
+
+.button {
+  color: whitesmoke;
+  background: none;
+  border: 2px solid whitesmoke;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.5 ease;
+  margin-top: 5px;
+}
+
+.button:hover {
+  color: black;
+  background: whitesmoke;
+}
