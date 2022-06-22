@@ -3,11 +3,13 @@ import Header from './component/Header'
 import UserProfile from './component/UserProfile';
 import Plan from './component/Plan';
 import Workouts from './component/Workout';
+import Footer from './component/Footer';
 
 const App = () => {
   const [users, setUsers] = useState(null);
   const [plans, setPlan] = useState(null);
   const [workouts, setWorkout] = useState(null);
+  const [motivate, setMotivate] = useState(null)
 
 
   useEffect(() => {
@@ -28,7 +30,13 @@ const App = () => {
     .then(data => setWorkout({data}))
   })
 
-  if(users !== null && plans !== null && workouts !== null) {
+  useEffect(() => {
+    fetch()
+    .then(response => response.json)
+    .then(data => setMotivate({data}))
+  })
+
+  if(users !== null && plans !== null && workouts !== null && motivate !== null) {
     return (
     
       <>
@@ -36,6 +44,7 @@ const App = () => {
       <UserProfile users={users}  />
       <Plan plans={plans}  /> 
       <Workouts workouts={workouts} />
+      <Footer motivate={motivate}/>
       </>
   
     )
