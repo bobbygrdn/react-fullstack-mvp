@@ -24,28 +24,30 @@ const UserProfileForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:4000/api/workout_plans/${props.user_id}`, fetchData)
+        fetch(`http://localhost:4000/api/users/${props.user.user_id}`, fetchData)
         .then(() => {
-            window.alert('Changed Workout Plan!')
+            window.alert('Updated User Stats!')
         })
         setHeight('');
         setWeight('');
         setBodyFat('');
         setBmi('');
-        props.showProfile(true);
-        props.showUpdate(false);
+        props.showProfile(false);
+        props.showUpdate(true);
     }
+    return(
 
     <form onSubmit={e => { handleSubmit(e) }}>
 
-            <input name='name' type='text' value={height} placeholder="Name" onChange={e => setHeight(e.target.value)} />
-            <input name='type' type='text' value={weight} placeholder="Type" onChange={e => setWeight(e.target.value)} />
-            <input name='freq' type='text' value={bodyFat} placeholder="Frequency" onChange={e => setBodyFat(e.target.value)} />
-            <input name='freq' type='text' value={bmi} placeholder="Frequency" onChange={e => setBmi(e.target.value)} />
+            <input name='name' type='text' value={height} placeholder="Height" onChange={e => setHeight(e.target.value)} />
+            <input name='type' type='text' value={weight} placeholder="Weight" onChange={e => setWeight(e.target.value)} />
+            <input name='freq' type='text' value={bodyFat} placeholder="Body Fat" onChange={e => setBodyFat(e.target.value)} />
+            <input name='freq' type='text' value={bmi} placeholder="BMI" onChange={e => setBmi(e.target.value)} />
             <input className="button" type='submit' value='Submit' />
           
         </form>
 
+    )
 }
 
 export default UserProfileForm
