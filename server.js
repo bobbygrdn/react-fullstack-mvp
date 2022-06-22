@@ -218,14 +218,6 @@ app.patch('/api/workout/:id', async (req,res) => {
             console.error(err.message)
         }
     }
-    if(obj.reps) {
-        try {
-            const data = await pool.query(`UPDATE workout SET reps = '${obj.reps}' WHERE workout_id = '${id}';`)
-            res.send('Updated reps');
-        } catch (err) {
-            console.error(err.message)
-        }
-    }
     if(obj.reps_time) {
         try {
             const data = await pool.query(`UPDATE workout SET reps_time = '${obj.reps_time}' WHERE workout_id = '${id}';`)

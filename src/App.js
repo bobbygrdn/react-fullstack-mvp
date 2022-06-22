@@ -9,8 +9,6 @@ const App = () => {
   const [users, setUsers] = useState(null);
   const [plans, setPlan] = useState(null);
   const [workouts, setWorkout] = useState(null);
-  const [motivate, setMotivate] = useState(null)
-
 
   useEffect(() => {
     fetch('http://localhost:4000/api/users')
@@ -30,13 +28,7 @@ const App = () => {
     .then(data => setWorkout({data}))
   })
 
-  useEffect(() => {
-    fetch()
-    .then(response => response.json)
-    .then(data => setMotivate({data}))
-  })
-
-  if(users !== null && plans !== null && workouts !== null && motivate !== null) {
+  if(users !== null && plans !== null && workouts !== null) {
     return (
     
       <>
@@ -44,7 +36,7 @@ const App = () => {
       <UserProfile users={users}  />
       <Plan plans={plans}  /> 
       <Workouts workouts={workouts} />
-      <Footer motivate={motivate}/>
+      <Footer />
       </>
   
     )
