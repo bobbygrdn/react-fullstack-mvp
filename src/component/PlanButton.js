@@ -1,8 +1,8 @@
 const PlanButton = (props) => {
 
-    const handleClick = (props) => {
-        props.setShowPlan(true)
-        props.setUpdateButton(false)
+    const handleClick = () => {
+        props.showPlan(true)
+        props.UpdateButton(false)
     }
 
     return(
