@@ -29,6 +29,8 @@ const PlanForm = (props) => {
         setName('');
         setType('');
         setFreq('');
+        props.setUpdateButton(true);
+        props.setShowPlan(false);
     }
 
     return(
