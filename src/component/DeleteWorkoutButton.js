@@ -12,6 +12,7 @@ const DeleteWorkoutButton = (props) => {
         })
     }
     const handleClick = () => {
+        console.log(fetchData)
         fetch(`http://localhost:4000/api/workout/${data.workout_id}`, fetchData)
         .then(() => {
             window.alert('Workout Dropped')
