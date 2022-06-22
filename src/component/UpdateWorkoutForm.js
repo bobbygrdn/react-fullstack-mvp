@@ -2,10 +2,10 @@ import { useState } from "react";
 
 const UpdateWorkoutForm = (props) => {
 
-    const [name, setName] = useState([])
-    const [sets, setSets] = useState([]);
-    const [reps, setReps] = useState([]);
-    const [rest, setRest] = useState([]);
+    const [name, setName] = useState('')
+    const [sets, setSets] = useState('');
+    const [reps, setReps] = useState('');
+    const [rest, setRest] = useState('');
 
     let data = {
         exercise_name: name,
@@ -23,19 +23,18 @@ const UpdateWorkoutForm = (props) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        fetch(`http://localhost:4000/api/workout/${props.workout.workout_id}`, fetchData)
+        e.preventDefault();        
+        fetch(`http://localhost:4000/api/workout/${props.workout}`, fetchData)
             .then(() => {
             window.alert("Workout Added")
             })
             .catch(err => {
                 console.error(err);
             })
-       setName([]);
-       setSets([]);
-       setReps([]);
-       setRest([]);
+       setName('');
+       setSets('');
+       setReps('');
+       setRest('');
        props.showUpdate(false)
        props.UpdateButton(true)
     }
