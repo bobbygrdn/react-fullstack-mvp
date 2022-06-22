@@ -7,7 +7,7 @@ const UserProfileButton = (props) => {
 
     return (
 
-        <button className="planButton" onClick={handleClick}>Update</button>
+        <button className="profileButton" onClick={handleClick}>Update</button>
     )
 }
 
