@@ -145,7 +145,6 @@ app.patch('/api/workout_plans/:id', async (req,res) => {
     if(obj.type_of_plan) {
         try {
             const data = await pool.query(`UPDATE workout_plans SET type_of_plan = '${obj.type_of_plan}' WHERE plan_id = '${id}';`)
-            res.set('Access-Control-Allow-Origin', '*')
             res.send('Updated type of plan');
         } catch (err) {
             console.error(err.message)
@@ -192,13 +191,12 @@ app.get('/api/workout/:id', async (req,res) => {
 
 app.post('/api/workout', async (req,res) => {
     const obj = req.body
-    console.log(obj)
-    // try {
-    //     const data = await pool.query(`INSERT INTO workout (exercise_name, sets, reps_time, rest_cycle) VALUES ('${obj.exercise_name}', '${obj.sets}', '${obj.reps_time}', '${obj.rest_cycle}');`)
-    //     res.send("Added Workout!")
-    // } catch (err) {
-    //     console.error(err.message)
-    // }
+    try {
+        const data = await pool.query(`INSERT INTO workout (exercise_name, sets, reps_time, rest_cycle) VALUES ('${obj.exercise_name}', '${obj.sets}', '${obj.reps_time}', '${obj.rest_cycle}');`)
+        res.send("Added Workout!")
+    } catch (err) {
+        console.error(err.message)
+    }
 })
 
 app.patch('/api/workout/:id', async (req,res) => {
