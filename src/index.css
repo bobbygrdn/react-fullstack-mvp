@@ -76,7 +76,7 @@ body {
 }
 
 .userStats {
-  cursor: pointer;
+  pointer-events: none;
   width: fit-content;
   display: inline-flex;
   border-radius: 5px;
