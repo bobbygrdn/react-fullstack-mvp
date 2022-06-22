@@ -48,7 +48,6 @@ app.post('/api/users', async (req,res) => {
 app.patch('/api/users/:id', async (req,res) => {
     const id = req.params.id;
     const obj = req.obj;
-
     if(obj.username) {
         try {
             const data = await pool.query(`UPDATE users SET username = '${obj.username}' WHERE user_id = '${id}';`)
@@ -133,7 +132,7 @@ app.post('/api/workout_plans', async (req,res) => {
 app.patch('/api/workout_plans/:id', async (req,res) => {
     const id = req.params.id;
     const obj = req.body;
-    
+
     if(obj.plan_name) {
         try {
             const data = await pool.query(`UPDATE workout_plans SET plan_name = '${obj.plan_name}' WHERE plan_id = '${id}';`)
