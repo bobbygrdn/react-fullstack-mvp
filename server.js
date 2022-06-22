@@ -13,8 +13,8 @@ const pool = new Pool({
     port: 5432,
 })
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 app.get('/api/users', async (req,res) => {
     try {
@@ -47,7 +47,7 @@ app.post('/api/users', async (req,res) => {
 
 app.patch('/api/users/:id', async (req,res) => {
     const id = req.params.id;
-    const obj = req.params.obj;
+    const obj = req.obj;
 
     if(obj.username) {
         try {
@@ -132,7 +132,7 @@ app.post('/api/workout_plans', async (req,res) => {
 
 app.patch('/api/workout_plans/:id', async (req,res) => {
     const id = req.params.id;
-    const obj = req.params.obj;
+    const obj = req.body;
     
     if(obj.plan_name) {
         try {
@@ -191,18 +191,19 @@ app.get('/api/workout/:id', async (req,res) => {
 })
 
 app.post('/api/workout', async (req,res) => {
-    const obj = req.body;
-    try {
-        const data = await pool.query(`INSERT INTO workout (exercise_name, sets, reps_time, rest_cycle) VALUES ('${obj.exercise_name}','${obj.sets}', '${obj.reps_time}', '${obj.rest_cycle}');`)
-        res.send('Created User')
-    } catch (err) {
-        console.error(err.message)
-    }
+    const obj = req.body
+    console.log(obj)
+    // try {
+    //     const data = await pool.query(`INSERT INTO workout (exercise_name, sets, reps_time, rest_cycle) VALUES ('${obj.exercise_name}', '${obj.sets}', '${obj.reps_time}', '${obj.rest_cycle}');`)
+    //     res.send("Added Workout!")
+    // } catch (err) {
+    //     console.error(err.message)
+    // }
 })
 
 app.patch('/api/workout/:id', async (req,res) => {
     const id = req.params.id;
-    const obj = req.params.obj;
+    const obj = req.body;
     
     if(obj.exercise_name) {
         try {
