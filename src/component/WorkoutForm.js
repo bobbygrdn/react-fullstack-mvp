@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const WorkoutForm = () => {
+const WorkoutForm = (props) => {
 
     const [name, setName] = useState([])
     const [sets, setSets] = useState([]);
@@ -36,6 +36,8 @@ const WorkoutForm = () => {
        setSets([]);
        setReps([]);
        setRest([]);
+       props.showWorkout(false)
+       props.addButton(true)
     }
 
     return (
